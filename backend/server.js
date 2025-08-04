@@ -283,6 +283,11 @@ function generateFollowUpQuestions(symptoms) {
   return Array.from(questions).slice(0, 3);
 }
 
+
+// health
+app.get('/',(req,res)=>{
+    res.status(200).end('ok');
+})
 // Main Chat Endpoint
 app.post('/api/chat', async (req, res) => {
   try {
@@ -437,7 +442,7 @@ app.use('*', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 1000;
 
 app.listen(PORT, () => {
   console.log('\n🏥 Healthcare Chatbot Server Started Successfully!');
