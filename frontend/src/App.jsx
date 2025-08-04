@@ -227,9 +227,9 @@ const HealthcareChatbot = () => {
     addMessage('user', userMessage);
     setInputMessage('');
     setIsLoading(true);
-
+    const api_base = import.meta.env.VITE_BACKEND_URL || "https://localhost:3001";
     try {
-      const response = await fetch('http://localhost:3001/api/chat', {
+      const response = await fetch(`${api_base}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
